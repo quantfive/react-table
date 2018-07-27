@@ -42,7 +42,8 @@ export default Base =>
         oldState.columns !== newState.columns ||
         oldState.pivotBy !== newState.pivotBy ||
         oldState.sorted !== newState.sorted ||
-        oldState.filtered !== newState.filtered
+        oldState.filtered !== newState.filtered ||
+        oldState.page !== newState.page
       ) {
         this.setStateWithData(this.getDataModel(newState, oldState.data !== newState.data))
       }

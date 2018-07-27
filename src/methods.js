@@ -431,7 +431,10 @@ export default Base =>
     onPageChange (page) {
       const { onPageChange, collapseOnPageChange } = this.props
 
-      const newState = { page }
+      let newState = { page }
+      if (typeof this.props.page !== 'undefined' || this.props.page !== null) {
+        newState = { page: this.props.page }
+      }
       if (collapseOnPageChange) {
         newState.expanded = {}
       }
